@@ -1,4 +1,4 @@
-# ketst
+# ktest
 PIC10F222の開発
 
 IDEやPICの書き込みについても手引きを書きたい
