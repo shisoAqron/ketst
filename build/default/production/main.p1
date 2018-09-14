@@ -1,0 +1,103 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[p mainexit ]
+"313 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic10F222.h
+[s S18 :1 `uc 1 :1 `uc 1 :2 `uc 1 :2 `uc 1 :2 `uc 1 ]
+[n S18 . ADON GO_nDONE CHS . ANS ]
+"320
+[s S19 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S19 . . GO CHS0 CHS1 . ANS0 ANS1 ]
+"329
+[s S20 :1 `uc 1 :1 `uc 1 ]
+[n S20 . . nDONE ]
+"312
+[u S17 `S18 1 `S19 1 `S20 1 ]
+[n S17 . . . . ]
+"334
+[v _ADCON0bits `VS17 ~T0 @X0 0 e@7 ]
+"204
+[s S13 :1 `uc 1 :7 `uc 1 ]
+[n S13 . FOSC4 CAL ]
+"208
+[s S14 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S14 . . CAL0 CAL1 CAL2 CAL3 CAL4 CAL5 CAL6 ]
+"203
+[u S12 `S13 1 `S14 1 ]
+[n S12 . . . ]
+"219
+[v _OSCCALbits `VS12 ~T0 @X0 0 e@5 ]
+"459
+[v _OPTION `VWuc ~T0 @X0 0 e@0 ]
+"467
+[v _TRISGPIO `VWuc ~T0 @X0 0 e@6 ]
+"565
+[v _GP0 `Vb ~T0 @X0 0 e@48 ]
+[v F167 `(v ~T0 @X0 1 tf1`ul ]
+"92 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic.h
+[v __delay `JF167 ~T0 @X0 0 e ]
+[p i __delay ]
+"54 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic10F222.h
+[; <" INDF equ 00h ;# ">
+"74
+[; <" TMR0 equ 01h ;# ">
+"94
+[; <" PCL equ 02h ;# ">
+"114
+[; <" STATUS equ 03h ;# ">
+"180
+[; <" FSR equ 04h ;# ">
+"200
+[; <" OSCCAL equ 05h ;# ">
+"271
+[; <" GPIO equ 06h ;# ">
+"309
+[; <" ADCON0 equ 07h ;# ">
+"391
+[; <" ADRES equ 08h ;# ">
+"14 main.c
+[; ;main.c: 14:         _delay((unsigned long)((1)*(4000000/4000000.0)));
+[p x IOSCFS = 4MHZ ]
+"15
+[; ;main.c: 15:      }
+[p x MCPU = OFF ]
+"16
+[; ;main.c: 16: }
+[p x WDTE = OFF ]
+"17
+[p x CP = OFF ]
+"18
+[p x MCLRE = OFF ]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"23
+[v _main `(i ~T0 @X0 1 ef ]
+{
+[e :U _main ]
+[f ]
+"24
+[e = . . _ADCON0bits 1 5 -> -> 0 `i `uc ]
+"25
+[e = . . _ADCON0bits 1 6 -> -> 0 `i `uc ]
+"26
+[e = . . _OSCCALbits 0 0 -> -> 0 `i `uc ]
+"27
+[e = _OPTION -> -> 0 `i `uc ]
+"28
+[e = _TRISGPIO -> -> 0 `i `uc ]
+"30
+[e :U 31 ]
+{
+"31
+[e = _GP0 -> -> 1 `i `b ]
+"32
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+"33
+[e = _GP0 -> -> 0 `i `b ]
+"34
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+"35
+}
+[e :U 30 ]
+[e $U 31  ]
+[e :U 32 ]
+"36
+[e :UE 29 ]
+}
